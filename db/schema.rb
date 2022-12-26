@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_210608) do
     t.string "city"
     t.string "state"
     t.string "zip"
+    t.string "plans"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,8 +40,9 @@ ActiveRecord::Schema.define(version: 2022_12_22_210608) do
   create_table "projects", force: :cascade do |t|
     t.integer "house_id"
     t.integer "contractor_id"
-    t.string "project_title"
+    t.string "name"
     t.date "completion_date"
+    t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

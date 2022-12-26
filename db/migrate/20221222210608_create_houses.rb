@@ -7,6 +7,7 @@ class CreateHouses < ActiveRecord::Migration[6.1]
       t.string :city
       t.string :state
       t.string :zip
+      t.string :plans
 
       t.timestamps
     end
