@@ -6,6 +6,8 @@ class CreateContractors < ActiveRecord::Migration[6.1]
       t.string :company
       t.string :city
       t.string :state
+      t.string :username
+      t.string :password_digest
 
       t.timestamps
     end

@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2022_12_22_210608) do
     t.string "company"
     t.string "city"
     t.string "state"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_210608) do
     t.string "city"
     t.string "state"
     t.string "zip"
-    t.string "plans"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_12_22_210608) do
     t.string "name"
     t.date "completion_date"
     t.boolean "complete"
+    t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

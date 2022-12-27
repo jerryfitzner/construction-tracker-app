@@ -6,6 +6,7 @@ class CreateProjects < ActiveRecord::Migration[6.1]
       t.string :name
       t.date :completion_date
       t.boolean :complete
+      t.text :notes
 
       t.timestamps
     end
