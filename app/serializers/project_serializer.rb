@@ -1,3 +1,3 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :house_id, :contractor_id, :project_title, :completion_date
+  attributes :id, :house_id, :contractor_id, :name, :completion_date, :complete, :notes
 end
