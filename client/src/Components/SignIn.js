@@ -1,6 +1,4 @@
 import React from "react";
-import Houses from "./Houses";
-import SignUp from "./SignUp";
 
 function SignIn (){
 

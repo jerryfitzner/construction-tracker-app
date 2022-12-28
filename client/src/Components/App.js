@@ -2,8 +2,10 @@
 import '../App.css';
 import { Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import SignIn from './SignIn';
-import Houses from './Houses';
+// import SignIn from './SignIn';
+// import Houses from './Houses';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
   const [cont, setCont] = useState(null);
@@ -19,13 +21,16 @@ function App() {
 
   return (
     <div>
+      <Navbar cont={cont} setCont={setCont} />
       {cont ? (
         <Routes>
-          <Route path='/' element={ <Houses /> } />
+          <Route path='/' element={ <Home cont={cont} /> } />
         </Routes>
       ):(
         <Routes>
+          <Route path='/' element={ <Home /> } />
           <Route path='/signin' element={ <SignIn /> } />
+          <Route path='/signup' element={ <SignUp setCont={ setCont } /> } />
         </Routes>
       )}
     </div>
