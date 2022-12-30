@@ -20,7 +20,7 @@ class ContractorsController < ApplicationController
   private
 
   def authorization
-    return render json: { error: "Unauthorized user" }, status: :unathorized unless session.include? user_id 
+    return render json: { error: "Unauthorized user" }, status: :unauthorized unless session.include? :user_id 
   end
 
   def contractor_params
