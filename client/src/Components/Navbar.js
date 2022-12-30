@@ -7,15 +7,18 @@ function Navbar ({ cont, setCont }){
   return (
     <div>
       <div>
-        <NavLink to='/'>Home</NavLink>
       </div>
       <div>
         {cont ? (
-          <button></button>
-        ):(
           <div>
+            <NavLink to='/'>Home</NavLink>
+            <button></button>
+          </div>
+          ):(
+          <div>
+            <NavLink to='/'>Home</NavLink>
             <NavLink to='/signup'>Sign-Up</NavLink>
-            <NavLink to='/login'>Log In</NavLink>
+            <NavLink to='/signin'>Log In</NavLink>
           </div>
         )}
       </div>

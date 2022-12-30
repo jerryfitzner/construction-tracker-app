@@ -2,7 +2,8 @@
 import '../App.css';
 import { Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-// import SignIn from './SignIn';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 // import Houses from './Houses';
 import Navbar from './Navbar';
 import Home from './Home';
