@@ -11,7 +11,12 @@ function Home ({ cont }){
   return (
     <div>
       { cont ? (
-        <h1>Logged In</h1>
+        <div>
+          <h1>Logged In</h1>
+          <Houses />
+        </div>
+        
+
       ):(
         <h1>Logged Out</h1>
       )}

@@ -2,11 +2,16 @@ import React from "react";
 import Project from "./Project";
 import CreateProject from "./CreateProject";
 
-function Projects (){
+function Projects ({ houseProjects }){
 
 
   return (
-    <h1>Projects</h1>
+    <div>
+      <h1>Projects</h1>
+      <ul>
+        {/* {houseProjects.map} */}
+      </ul>
+    </div>
   );
 }
 
