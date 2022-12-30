@@ -16,11 +16,11 @@ function Houses (){
     <div>
       <h1>Houses</h1>
       <div>
-        {houses ? (
+        {/* {houses ? (
           houses.map((singleHouse => <House singleHouse={singleHouse}/>))
         ):(
           <p>No houses yet!</p>
-        )}
+        )} */}
       </div>
     </div>
   );
