@@ -4,6 +4,17 @@ import { NavLink } from "react-router-dom";
 function Navbar ({ cont, setCont }){
 
 
+  const handleLogout = () => {
+    fetch('/logout', {
+      method: 'DELETE'
+    }).then((r) => {
+      if (r.ok){
+        setCont(null)
+      }
+    });
+  }
+
+
   return (
     <div>
       <div>
@@ -12,7 +23,8 @@ function Navbar ({ cont, setCont }){
         {cont ? (
           <div>
             <NavLink to='/'>Home</NavLink>
-            <button></button>
+            {/* <NavLink to='/logout'>Logout</NavLink> */}
+            <button onClick={handleLogout}> Logout </button>
           </div>
           ):(
           <div>

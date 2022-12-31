@@ -6,7 +6,7 @@ import Houses from "./Houses";
 
 function Home ({ cont }){
 
-  
+  console.log(cont)
 
   return (
     <div>

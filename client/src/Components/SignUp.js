@@ -17,7 +17,8 @@ function SignUp ({ setCont }){
   };
 
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
+    console.log("Submit")
     fetch('/signup', {
       method: 'POST',
       headers: {
@@ -34,7 +35,7 @@ function SignUp ({ setCont }){
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Sign-Up</h1>
-        <input type="text" placeholder="Name" value={signupForm.name} name="name" onChange={handleChange} required/>
+        <input type="text" placeholder="Name" value={signupForm.name} name="name" onChange={handleChange} required />
         <input type="text" placeholder="Specialty" value={signupForm.specialty} name="specialty" onChange={handleChange} required/>
         <input type="text" placeholder="Company" value={signupForm.company} name="company" onChange={handleChange} required/>
         <input type="text" placeholder="City" value={signupForm.city} name="city" onChange={handleChange} required/>

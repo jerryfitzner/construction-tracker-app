@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((cont) = setCont(cont))
+        r.json().then((contractor) => setCont(contractor))
       }
     });
   }, []);
@@ -34,7 +34,7 @@ function App() {
       ):(
         <Routes>
           <Route path='/' element={ <Home /> } />
-          <Route path='/signin' element={ <SignIn /> } />
+          <Route path='/signin' element={ <SignIn setCont={ setCont } /> } />
           <Route path='/signup' element={ <SignUp setCont={ setCont } /> } />
         </Routes>
       )}
