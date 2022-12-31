@@ -19,9 +19,7 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(cont)
-  }, [cont])
+  
 
 
   return (
