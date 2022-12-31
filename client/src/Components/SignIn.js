@@ -21,6 +21,8 @@ function SignIn ({ setCont }){
     }).then((r) => {
       if (r.ok) {
         r.json().then((cont) => setCont(cont));
+      } else {
+        r.json().then((error) => console.log(error))
       }
     });
   }

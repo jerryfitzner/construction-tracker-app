@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorized, only: :create
 
   def create
     user = Contractor.find_by(username: params[:username])
-    # binding.pry
+    
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       render json: user, status: :created
     else 
-      render json: { error: " Invalid Username and/or Password " }, satus: :unathorized
+      render json: { error: " Invalid Username and/or Password " }, status: :unauthorized
     end
   end
 

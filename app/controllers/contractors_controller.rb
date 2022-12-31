@@ -21,7 +21,7 @@ class ContractorsController < ApplicationController
     # Return more information
     # binding.pry
     cont = Contractor.find_by(id: session[:user_id])
-    render json: cont
+    render json: cont, status: :created
   end
 
   private
