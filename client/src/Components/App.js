@@ -7,6 +7,7 @@ import SignUp from './SignUp';
 // import Houses from './Houses';
 import Navbar from './Navbar';
 import Home from './Home';
+// import CreateHouse from './CreateHouse';
 
 function App() {
   const [cont, setCont] = useState(null);
@@ -28,12 +29,14 @@ function App() {
       {cont ? (
         <Routes>
           <Route path='/' element={ <Home cont={cont} /> } />
+          <Route path='*' element={ <Home cont={cont} /> } />
         </Routes>
       ):(
         <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/signin' element={ <SignIn setCont={ setCont } /> } />
           <Route path='/signup' element={ <SignUp setCont={ setCont } /> } />
+          <Route path='*' element={ <SignIn setCont={ setCont } /> } />
         </Routes>
       )}
     </div>

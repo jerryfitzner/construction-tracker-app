@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function SignIn ({ setCont }){
+  const [error, setError] = useState('');
   const [signInForm, setSignInForm] = useState({
     username: '',
     password: ''
@@ -22,10 +23,11 @@ function SignIn ({ setCont }){
       if (r.ok) {
         r.json().then((cont) => setCont(cont));
       } else {
-        r.json().then((error) => console.log(error))
+        r.json().then((error) => setError(error.error))
       }
     });
   }
+
 
   return (
     <div>
@@ -35,6 +37,9 @@ function SignIn ({ setCont }){
         <input type="text" placeholder="Password" name="password" value={ signInForm.password } onChange={ handleChange } required/>
         <button>Sign In</button>
       </form>
+      <div>
+        {error}
+      </div>
     </div>
   );
 }

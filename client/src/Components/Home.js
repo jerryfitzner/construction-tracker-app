@@ -13,7 +13,7 @@ function Home ({ cont }){
       { cont ? (
         <div>
           <h1>Logged In</h1>
-          <Houses />
+          <Houses cont={cont}/>
         </div>
         
 
