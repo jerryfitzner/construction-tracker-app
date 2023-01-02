@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
+const beginningState = {
+  owner_first_name: '',
+  owner_last_name: '',
+  street: '',
+  city: '',
+  state: '',
+  zip: '',
+  image: ''
+};
+
 function CreateHouse ({ addHouse }){
-  const [formInput, setFormInput] = useState({
-    owner_first_name: '',
-    owner_last_name: '',
-    street: '',
-    city: '',
-    state: '',
-    zip: '',
-    image: ''
-  });
+  const [formInput, setFormInput] = useState(beginningState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +25,10 @@ function CreateHouse ({ addHouse }){
       body: JSON.stringify(formInput)
     }).then((resp) => {
       if (resp.ok) {
-        resp.json().then(house => addHouse(house))
+        resp.json().then(house => {
+          setFormInput(formInput);
+          addHouse(house);
+        })
       } else {
         resp.json().then((error) => console.log(error))
       }

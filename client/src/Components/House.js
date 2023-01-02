@@ -3,7 +3,7 @@ import Projects from "./Projects";
 
 function House ({ singleHouse, cont }){
 
-  
+  // console.log(singleHouse)
 
   return (
     <div>

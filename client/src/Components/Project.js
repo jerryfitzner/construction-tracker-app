@@ -35,9 +35,6 @@ function Project ({ proj, deleteProject }){
   
   
   return (
-    // <div>
-    //   {/* <li> */}
-    //     <table>
     <tbody>
       <tr>
         <td>{proj.name}</td>
@@ -47,9 +44,6 @@ function Project ({ proj, deleteProject }){
         <td><button onClick={deleteClick}>Delete</button></td>
       </tr>
     </tbody>
-    //     </table>
-    //   {/* </li> */}
-    // </div>
   );
 }
 

@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Project from "./Project";
 import { v4 as uuidv4 } from 'uuid';
 import CreateProject from "./CreateProject";
 
 function Projects ({ houseProjects, houseId, cont }){
-  const [projects, setProjects] = useState([]);
-  // const [ proj, setProj ] = useState([]);
-  // const [ isProject, setIsProject ] = useState(false);
+  const [projects, setProjects] = useState(houseProjects);
 
-  useEffect(() => {
-    if (houseProjects) {
-      // setIsProject(true);
-      setProjects(houseProjects)
-    }
-  }, [])
+  // console.log(houseProjects)
+
+  // useEffect(() => {
+  //   if (houseProjects) {
+  //     // setIsProject(true);
+  //     setProjects(houseProjects)
+  //   }
+  // }, [])
 
   // console.log(isProject)
 

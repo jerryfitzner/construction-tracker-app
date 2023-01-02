@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
+const beginningState = {
+  name: '',
+  specialty: '',
+  company: '',
+  city: '',
+  state: '',
+  username: '',
+  password: '',
+  password_confirmation: ''
+};
+
 function SignUp ({ setCont }){
-  const [signupForm, setSignupForm] = useState({
-    name: '',
-    specialty: '',
-    company: '',
-    city: '',
-    state: '',
-    username: '',
-    password: '',
-    password_confirmation: ''
-  });
+  const [signupForm, setSignupForm] = useState(beginningState);
 
   const handleChange = (e) => {
     setSignupForm({...signupForm, [e.target.name]: e.target.value})
@@ -27,7 +29,10 @@ function SignUp ({ setCont }){
       },
       body: JSON.stringify(signupForm)
     }).then((r) => {
-      r.json().then((cont) => setCont(cont))
+      r.json().then((cont) => {
+        setSignupForm(beginningState);
+        setCont(cont);
+      });
     });
   };
 

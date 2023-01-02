@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
+const beginningState = {
+  username: '',
+  password: ''
+};
+
 function SignIn ({ setCont }){
   const [error, setError] = useState('');
-  const [signInForm, setSignInForm] = useState({
-    username: '',
-    password: ''
-  });
+  const [signInForm, setSignInForm] = useState(beginningState);
 
   const handleChange = (e) => {
     setSignInForm({...signInForm, [e.target.name]: e.target.value})
@@ -21,7 +23,10 @@ function SignIn ({ setCont }){
       body: JSON.stringify(signInForm),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((cont) => setCont(cont));
+        r.json().then((cont) => {
+          setSignInForm(beginningState);
+          setCont(cont)
+        });
       } else {
         r.json().then((error) => setError(error.error))
       }

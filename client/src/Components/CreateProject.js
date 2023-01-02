@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
+
+
 function CreateProject ({ cont, houseId, updateProjects }){
-  const [projectForm, setProjectForm] = useState({
+  const beginningState = {
     house_id: houseId,
     contractor_id: cont.id,
     name: '',
     completion_date: '',
     complete: false,
     notes: ''
-  });
+  };
+
+  const [projectForm, setProjectForm] = useState(beginningState);
 
   // console.log(cont.id, houseId)
   // console.log(projectForm.complete)
@@ -24,7 +28,10 @@ function CreateProject ({ cont, houseId, updateProjects }){
       body: JSON.stringify(projectForm)
     }).then((resp) => {
       if (resp.ok) {
-        resp.json().then(project => updateProjects(project))
+        resp.json().then(project => {
+          setProjectForm(beginningState);
+          updateProjects(project);
+        })
       } else {
         resp.json().then(error => console.log(error))
       }

@@ -1,5 +1,7 @@
 class ContractorsController < ApplicationController
   before_action :authorization, only: [:show] 
+  # Allows houses to load since the contractor is being created
+  skip_before_action :authorized, only: [:create]
 
   def index
     cont = Contractor.all
