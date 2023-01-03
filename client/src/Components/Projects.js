@@ -41,7 +41,7 @@ function Projects ({ houseProjects, houseId, cont }){
             <th>Delete Project</th>
           </tr>
         </thead>
-        {projects.map((project) => <Project key={uuidv4()} deleteProject={deleteProject} proj={project} />)}
+        {projects.map((project) => <Project key={uuidv4()} deleteProject={deleteProject} proj={project} cont={cont}/>)}
       </table>
       <div>
         {<CreateProject cont={cont} houseId={houseId} updateProjects={updateProjects} />}

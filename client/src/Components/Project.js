@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-function Project ({ proj, deleteProject }){
+function Project ({ proj, deleteProject, cont }){
   const [isComplete, setIsComplete] = useState(proj.complete);
+  const [isCreator, setIsCreator] = useState(false);
   
 
   const handleClick = (e) => {
@@ -32,6 +33,14 @@ function Project ({ proj, deleteProject }){
       }
     }
   )}
+
+  // console.log(cont.id, proj.contractor_id)
+
+  useEffect(() => {
+    if (cont.id === proj.contractor_id) {
+      setIsCreator(true)
+    } 
+  },[cont.id, proj.contractor_id]);
   
   
   return (
@@ -39,9 +48,20 @@ function Project ({ proj, deleteProject }){
       <tr>
         <td>{proj.name}</td>
         <td>{proj.completion_date}</td>
-        <td><button onClick={handleClick}>{isComplete ? 'Yes' : 'No'}</button></td>
-        <td>{proj.notes}</td>
-        <td><button onClick={deleteClick}>Delete</button></td>
+        {isCreator ? (
+        <>
+          <td><button onClick={handleClick}>{isComplete ? 'Yes' : 'No'}</button></td>
+          <td>{proj.notes}</td>
+          <td><button onClick={deleteClick}>Delete</button></td>
+        </>
+        ):(
+          <>
+            <td>{isComplete ? 'Yes' : 'No'}</td>
+            <td>{proj.notes}</td>
+            <td>Contact creator: {cont.name}</td>
+          </>
+        ) 
+        }
       </tr>
     </tbody>
   );
