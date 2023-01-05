@@ -18,7 +18,11 @@ function Home ({ cont }){
         
 
       ):(
-        <h1>Logged Out</h1>
+        <div>
+          <h1>Welcome to the Construction APP</h1>
+          <h4></h4>
+        </div>
+
       )}
     </div>
   );
