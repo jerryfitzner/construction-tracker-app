@@ -11,3 +11,79 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  color:#ACB2B4;
+}
+
+body {
+  background-color: #44464A;
+}
+
+.Colors {
+  color1: #B5B09C;
+  color2: #413332;
+  color3: #ACB2B4;
+  color4: #44464A;
+}
+
+.House-container {
+  background-size: contain;
+  background-color: #B5B09C;
+  color:#413332;
+  border-style: solid;
+  border-radius: 20px;
+  padding-top: 50px;
+  padding-right: 2%;
+  padding-bottom: 50px;
+  padding-left: 2%;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  background-color: #ACB2B4;
+
+}
+
+.NavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#B5B09C;
+}
+
+.NavBar li a {
+  display: inline;
+  display: block;
+  color:#413332;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.NavBar li {
+  float: right;
+}
+
+li a:hover {
+  background-color:#44464A;
+}
+
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  align-content: center;
+}

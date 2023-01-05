@@ -21,16 +21,19 @@ function Navbar ({ cont, setCont }){
       </div>
       <div>
         {cont ? (
-          <div>
-            <NavLink to='/'>Home</NavLink>
-            {/* <NavLink to='/logout'>Logout</NavLink> */}
-            <button onClick={handleLogout}> Logout </button>
+          <div className="NavBar">
+            <ul>
+              <li><NavLink onClick={handleLogout}>Logout</NavLink></li>
+              <li><NavLink to='/'>Home</NavLink></li>       
+            </ul>
           </div>
           ):(
-          <div>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/signup'>Sign-Up</NavLink>
-            <NavLink to='/signin'>Log In</NavLink>
+          <div className="NavBar">
+            <ul>
+              <li><NavLink to='/signup'>Sign-Up</NavLink></li>
+              <li><NavLink to='/signin'>Log In</NavLink></li>
+              <li><NavLink to='/'>Home</NavLink></li>
+            </ul>
           </div>
         )}
       </div>
@@ -39,3 +42,6 @@ function Navbar ({ cont, setCont }){
 }
 
 export default Navbar;
+
+
+
