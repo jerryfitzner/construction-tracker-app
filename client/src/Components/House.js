@@ -7,8 +7,8 @@ function House ({ singleHouse, cont }){
 
   return (
     <div className="House-container">
-      <h2>{singleHouse.street} {singleHouse.city} {singleHouse.state} {singleHouse.zip}</h2>
-      <h4>{singleHouse.owner_first_name} {singleHouse.owner_last_name}</h4>
+      <h2>{singleHouse.street} <br/> {singleHouse.city}, {singleHouse.state} {singleHouse.zip}</h2>
+      <h4>Home Owner: {singleHouse.owner_first_name} {singleHouse.owner_last_name}</h4>
       <Projects houseProjects={singleHouse.projects} houseId={singleHouse.id} cont={cont}/>
     </div>
   );

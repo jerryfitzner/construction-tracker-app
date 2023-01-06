@@ -13,6 +13,7 @@ function CreateProject ({ cont, houseId, updateProjects }){
   };
 
   const [projectForm, setProjectForm] = useState(beginningState);
+  const [isCreate, setIsCreate] = useState(false);
 
   // console.log(cont.id, houseId)
   // console.log(projectForm.complete)
@@ -39,6 +40,10 @@ function CreateProject ({ cont, houseId, updateProjects }){
     
   }
 
+  const handleClick = () => {
+    setIsCreate(!isCreate)
+  };
+
   const handleChange = (e) => {
     setProjectForm({...projectForm, [e.target.name]: e.target.value})
   };
@@ -51,23 +56,31 @@ function CreateProject ({ cont, houseId, updateProjects }){
 
 
   return (
-    <div>
+    <div className="First-form">
+      {isCreate ? (
+      <>
       <h4>Create Project</h4>
-      <form onSubmit={handleSubmit}>
-        <label> Project Name:
-          <input value={projectForm.name} placeholder="Project Name" type="text" name="name" onChange={handleChange} required/>
+      <form onSubmit={handleSubmit} >
+        <label> 
+          <input className="Project-form" value={projectForm.name} placeholder="Project Name" type="text" name="name" onChange={handleChange} required/>
         </label>
-        <label> Completion Date:
-          <input value={projectForm.completion_date} type="date" name="completion_date" onChange={handleChange} required/>
+        <br/>
+        <label> Completion Date: <br/>
+          <input className="Project-form" value={projectForm.completion_date} type="date" name="completion_date" onChange={handleChange} required/>
         </label>
-        <label> Check if Complete:
-          <input value={projectForm.complete} type="checkbox" name="complete" onChange={handleCompleteChange} />
-        </label>
-        <label> Notes:
+        <br/>
+        <label> 
           <input value={projectForm.notes} placeholder="Project Notes" type="text" name="notes" onChange={handleChange} required/>
+        </label> 
+        <br/>
+        <label> Check if Complete:
+          <input className="Project-form" value={projectForm.complete} type="checkbox" name="complete" onChange={handleCompleteChange} />
         </label>
-        <button>Create Project</button>
+        <br/>
+        <button className="Create-projectBtn">Create Project</button>
       </form>
+      </>
+      ):(<button onClick={handleClick} className="Create-projectBtn">Add Project</button>)}
     </div>
   );
 }

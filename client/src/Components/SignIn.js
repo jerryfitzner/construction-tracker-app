@@ -35,11 +35,13 @@ function SignIn ({ setCont }){
 
 
   return (
-    <div>
+    <div className="First-form">
       <h1>SignIn</h1>
       <form onSubmit={ handleSubmit }>
         <input type="text" placeholder="Username" name="username" value={ signInForm.username } onChange={ handleChange } required/>
+        <br/>
         <input type="text" placeholder="Password" name="password" value={ signInForm.password } onChange={ handleChange } required/>
+        <br/>
         <button>Sign In</button>
       </form>
       <div>

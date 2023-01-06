@@ -12,8 +12,52 @@ code {
     monospace;
 }
 
+.First-form {
+  text-align: center;
+}
+
 h1 {
+  padding-top: 30px;
   color:#ACB2B4;
+  text-align: center;
+  font-size: 60px;
+}
+
+h2.House-container {
+  text-align: center;
+  font-size: 15px;
+  color:#413332;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  padding-top: 0px;
+  color:#ACB2B4;
+  text-align: center;
+  font-size: 49px;
+}
+
+/* h4 {
+  text-align: center;
+  font-size: 40px;
+  color:#ACB2B4;
+} */
+
+h4.House-container {
+  text-align: center;
+  font-size: 40px;
+  color:#413332;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h5 {
+  text-align: center;
+  font-size: 15px;
+  color:#ACB2B4;
+  padding-top: 30px;
 }
 
 body {
@@ -21,10 +65,10 @@ body {
 }
 
 .Colors {
-  color1: #B5B09C;
-  color2: #413332;
-  color3: #ACB2B4;
-  color4: #44464A;
+  color: #B5B09C;
+  color: #413332;
+  color: #ACB2B4;
+  color: #44464A;
 }
 
 .House-container {
@@ -43,14 +87,61 @@ body {
 }
 
 table {
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
 
-button {
-  background-color: #ACB2B4;
-
+th {
+ font-size: 15px;
 }
+
+td {
+  font-size: 14px;
+}
+
+th, td {
+  padding: 9px;
+  border-bottom: 1px solid #413332;
+  text-align: center;
+}
+
+button.First-form {
+  background-color: #ACB2B4;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 16px;
+  border-radius: 5px;
+}
+
+.TableBtn {
+  background-color: #ACB2B4;
+  text-align: center;
+  font-size: 13px;
+  padding: 1px 10px;
+  border-radius: 5px;
+}
+
+.Create-projectBtn {
+  background-color: #ACB2B4;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.House-form button {
+  background-color: #ACB2B4;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
 
 .NavBar ul {
   list-style-type: none;
@@ -58,6 +149,9 @@ button {
   padding: 0;
   overflow: hidden;
   background-color:#B5B09C;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .NavBar li a {
@@ -87,3 +181,37 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
   align-content: center;
 }
+
+
+
+.Center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Project-form {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.House-form {
+  width: 65%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+

@@ -40,16 +40,19 @@ function CreateHouse ({ addHouse }){
   }
 
   return (
-    <div>
-      <h1>Add a New House</h1>
+    <div className="House-form">
+      <h3>Add a New House</h3>
+      <br/>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="owner_first_name" placeholder="First Name" value={formInput.owner_first_name} onChange={handleChange} required/>
-        <input type="text" name="owner_last_name" placeholder="Last Name" value={formInput.owner_last_name} onChange={handleChange} required/>
+        <input type="text" name="owner_first_name" placeholder="Owner First Name" value={formInput.owner_first_name} onChange={handleChange} required/>
+        <input type="text" name="owner_last_name" placeholder="Owner Last Name" value={formInput.owner_last_name} onChange={handleChange} required/>
+        <br/>
         <input type="text" name="street" placeholder="Street" value={formInput.street} onChange={handleChange} required/>
         <input type="text" name="city" placeholder="City" value={formInput.city} onChange={handleChange} required/>
         <input type="text" name="state" placeholder="State" value={formInput.state} onChange={handleChange} required/>
         <input type="text" name="zip" placeholder="Zip" value={formInput.zip} onChange={handleChange} required/>
-        <input type="text" name="image" placeholder="Image URL" value={formInput.image} onChange={handleChange} />
+        <input type="text" name="image" placeholder="House Image URL" value={formInput.image} onChange={handleChange} />
+        <br/>
         <button>Add House</button>
       </form>
     </div>

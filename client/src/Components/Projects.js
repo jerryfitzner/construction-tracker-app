@@ -30,14 +30,13 @@ function Projects ({ houseProjects, houseId, cont }){
 
   return (
     <div>
-      <h4>Projects:</h4>
       <table>
         <thead>
           <tr>
-            <th>Project name</th>
-            <th>Estimated Completion Date</th>
-            <th>Project complete</th>
+            <th>Project Name</th>
+            <th>Completion Date</th>
             <th>Notes </th>
+            <th>Project Complete</th>
             <th>Delete Project</th>
           </tr>
         </thead>

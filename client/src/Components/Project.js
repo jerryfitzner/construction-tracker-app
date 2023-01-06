@@ -50,15 +50,16 @@ function Project ({ proj, deleteProject, cont }){
         <td>{proj.completion_date}</td>
         {isCreator ? (
         <>
-          <td><button onClick={handleClick}>{isComplete ? 'Yes' : 'No'}</button></td>
           <td>{proj.notes}</td>
-          <td><button onClick={deleteClick}>Delete</button></td>
+          <td><button onClick={handleClick} className="TableBtn">{isComplete ? 'Yes' : 'No'}</button></td>
+          <td><button onClick={deleteClick} className="TableBtn">Delete</button></td>
         </>
         ):(
           <>
-            <td>{isComplete ? 'Yes' : 'No'}</td>
             <td>{proj.notes}</td>
-            <td>Contact creator: {cont.name}</td>
+            <td>{isComplete ? 'Yes' : 'No'}</td>
+            {/* <td>Contractor: {cont.company}</td> */}
+            <td>Contact Creator</td>
           </>
         ) 
         }

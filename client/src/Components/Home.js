@@ -4,6 +4,7 @@ import Houses from "./Houses";
 // import SignUp from "./SignUp";
 
 
+
 function Home ({ cont }){
 
   
@@ -12,15 +13,14 @@ function Home ({ cont }){
     <div>
       { cont ? (
         <div>
-          <h1>Logged In</h1>
+          <h5>Welcome {cont.company}!</h5>
           <Houses cont={cont}/>
         </div>
-        
-
       ):(
         <div>
           <h1>Welcome to the Construction APP</h1>
-          <h4></h4>
+          <h4>Use the menu above to Log-In or Sign-Up!</h4>
+          {/* <img src="..../public/ConstructionImage.png" /> */}
         </div>
 
       )}
