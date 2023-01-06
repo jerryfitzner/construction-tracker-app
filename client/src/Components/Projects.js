@@ -38,6 +38,7 @@ function Projects ({ houseProjects, houseId, cont }){
             <th>Notes </th>
             <th>Project Complete</th>
             <th>Delete Project</th>
+            <th>Edit Project</th>
           </tr>
         </thead>
         {projects.map((project) => <Project key={uuidv4()} deleteProject={deleteProject} proj={project} cont={cont}/>)}

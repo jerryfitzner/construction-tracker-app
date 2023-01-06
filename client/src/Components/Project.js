@@ -5,7 +5,7 @@ function Project ({ proj, deleteProject, cont }){
   const [isCreator, setIsCreator] = useState(false);
   
 
-  const handleClick = (e) => {
+  const handleCompleteClick = (e) => {
     fetch(`/projects/${proj.id}`, {
       method: 'PATCH',
       headers: {
@@ -51,8 +51,9 @@ function Project ({ proj, deleteProject, cont }){
         {isCreator ? (
         <>
           <td>{proj.notes}</td>
-          <td><button onClick={handleClick} className="TableBtn">{isComplete ? 'Yes' : 'No'}</button></td>
+          <td><button onClick={handleCompleteClick} className="TableBtn">{isComplete ? 'Yes' : 'No'}</button></td>
           <td><button onClick={deleteClick} className="TableBtn">Delete</button></td>
+          <td><button onClick={handleEditClick} className="TableBtn">Delete</button></td>
         </>
         ):(
           <>
