@@ -32,6 +32,7 @@ function CreateProject ({ cont, houseId, updateProjects }){
         resp.json().then(project => {
           setProjectForm(beginningState);
           updateProjects(project);
+          setIsCreate(!isCreate);
         })
       } else {
         resp.json().then(error => console.log(error))
@@ -78,6 +79,7 @@ function CreateProject ({ cont, houseId, updateProjects }){
         </label>
         <br/>
         <button className="Create-projectBtn">Create Project</button>
+        <button onClick={handleClick}>Close</button>
       </form>
       </>
       ):(<button onClick={handleClick} className="Create-projectBtn">Add Project</button>)}

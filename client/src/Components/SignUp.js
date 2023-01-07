@@ -13,6 +13,7 @@ const beginningState = {
 
 function SignUp ({ setCont }){
   const [signupForm, setSignupForm] = useState(beginningState);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setSignupForm({...signupForm, [e.target.name]: e.target.value})
@@ -29,10 +30,14 @@ function SignUp ({ setCont }){
       },
       body: JSON.stringify(signupForm)
     }).then((r) => {
-      r.json().then((cont) => {
-        setSignupForm(beginningState);
-        setCont(cont);
-      });
+      if (r.ok) {
+        r.json().then((cont) => {
+          setSignupForm(beginningState);
+          setCont(cont);
+        });
+      } else {
+        r.json().then((error) => setError(error.error))
+      }
     });
   };
 
@@ -58,6 +63,9 @@ function SignUp ({ setCont }){
         <br/>
         <button>Sign Up</button>
       </form>
+      <div>
+        {error}
+      </div>
     </div>
   );
 }

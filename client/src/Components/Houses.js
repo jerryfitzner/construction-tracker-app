@@ -27,7 +27,7 @@ function Houses ({ cont }){
       <h3>Houses</h3>
         {isCreateHouse ? (
           <div>
-            <CreateHouse addHouse={addHouse} />
+            <CreateHouse addHouse={addHouse}  handleClick={handleClick}/>
           </div>
           ):(
           <div className="Create-House">
@@ -35,7 +35,6 @@ function Houses ({ cont }){
           </div>
         )}
       <div>
-        
           {houses.map((singleHouse) => (<House key={uuidv4()} singleHouse={singleHouse} cont={cont}/>))}
       </div>
     </div>

@@ -10,7 +10,7 @@ const beginningState = {
   image: ''
 };
 
-function CreateHouse ({ addHouse }){
+function CreateHouse ({ addHouse, handleClick }){
   const [formInput, setFormInput] = useState(beginningState);
 
   const handleSubmit = (e) => {
@@ -28,6 +28,7 @@ function CreateHouse ({ addHouse }){
         resp.json().then(house => {
           setFormInput(formInput);
           addHouse(house);
+          handleClick();
         })
       } else {
         resp.json().then((error) => console.log(error))
@@ -51,9 +52,10 @@ function CreateHouse ({ addHouse }){
         <input type="text" name="city" placeholder="City" value={formInput.city} onChange={handleChange} required/>
         <input type="text" name="state" placeholder="State" value={formInput.state} onChange={handleChange} required/>
         <input type="text" name="zip" placeholder="Zip" value={formInput.zip} onChange={handleChange} required/>
-        <input type="text" name="image" placeholder="House Image URL" value={formInput.image} onChange={handleChange} />
+        {/* <input type="text" name="image" placeholder="House Image URL" value={formInput.image} onChange={handleChange} /> */}
         <br/>
         <button>Add House</button>
+        <button onClick={handleClick}>Close</button>
       </form>
     </div>
   );

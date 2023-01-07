@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  # skip_before_action :authorized, only: [:update]
 
   def index
     project = Project.all
@@ -16,7 +17,8 @@ class ProjectsController < ApplicationController
 
   def update
     project = Project.find_by(id: params[:id])
-    if project
+    user_id = session[:user_id]
+    if project && project.contractor_id == user_id
       project.update(project_params)
       render json: project, status: :accepted 
     else
