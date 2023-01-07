@@ -25,13 +25,15 @@ function Houses ({ cont }){
   return (
     <div>
       <h3>Houses</h3>
-      <div>
         {isCreateHouse ? (
-          <CreateHouse addHouse={addHouse} />
+          <div>
+            <CreateHouse addHouse={addHouse} />
+          </div>
           ):(
-          <button onClick={handleClick} className="Create-projectBtn">Add House</button>
+          <div className="Create-House">
+            <button onClick={handleClick} >Add House</button>
+          </div>
         )}
-      </div>
       <div>
         
           {houses.map((singleHouse) => (<House key={uuidv4()} singleHouse={singleHouse} cont={cont}/>))}
