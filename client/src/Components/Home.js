@@ -17,7 +17,7 @@ function Home ({ cont }){
           <Houses cont={cont}/>
         </div>
       ):(
-        <div>
+        <div className="Home">
           <h1>Welcome to the Construction APP</h1>
           <h4>Use the menu above to Log-In or Sign-Up!</h4>
           {/* <img src="..../public/ConstructionImage.png" /> */}
